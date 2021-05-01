@@ -1,0 +1,8 @@
+train models/backbones/efficient-net-b0.pth wider
+"local_regr_heads": {"pose": {"final_activation": true,
+			                           "input_dim": 256,
+			                            "output_dim":3,
+			                            "hidden_dim": 1024,
+			                            "num_layers": 3
+		                            }
+		                      }

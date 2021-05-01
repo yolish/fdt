@@ -1,0 +1,48 @@
+{
+	"general": {
+		"n_freq_print": 10,
+		"n_freq_checkpoint": 10,
+		"num_workers": 4,
+		"device_id": "cuda:0"
+	},
+	"wider": {
+		"batch_size": 1,
+		"lr": 1e-3,
+		"weight_decay": 1e-4,
+		"eps": 1e-10,
+		"lr_scheduler_step_size": 200,
+		"lr_scheduler_gamma": 0.5,
+		"num_epochs": 20,
+
+		"train_source": "./datasets/lmdb/WIDER_train_annotations.lmdb",
+		"val_source": "./datasets/lmdb/WIDER_val_annotations.lmdb",
+		"resize": true,
+		"noise_augmentation": true,
+		"contrast_augmentation": true,
+		"random_flip": true,
+		"random_crop": true,
+		"max_size": 256,
+		"n_epochs": 30,
+		"num_encoder_layers": 6,
+		"num_decoder_layers": 6,
+		"dim_feedforward": 256,
+		"hidden_dim":256,
+		"dropout": 0.1,
+		"nheads": 4,
+        "reduction": "reduction_4",
+		"num_faces": 100,
+		"npys": {
+			"threed_5_points": "./pose_references/reference_3d_5_points_trans.npy",
+			"threed_68_points": "./pose_references/reference_3d_68_points_trans.npy",
+			"pose_mean": "./datasets/lmdb/WIDER_train_annotations_pose_mean.npy",
+			"pose_stddev": "./datasets/lmdb/WIDER_train_annotations_pose_stddev.npy"
+		},
+		"global_cls_heads": {"event": {"num_classes": 25}
+		},
+		"global_regr_heads": {},
+		"local_cls_heads": {},
+		"local_regr_heads": {},
+		"clip_max_norm": 0.1
+	}
+}
+
